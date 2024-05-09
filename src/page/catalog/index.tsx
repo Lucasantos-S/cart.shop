@@ -1,5 +1,11 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 
 export default function Catalog() {
-  return <h1>Catalog</h1>
+  return (
+    <>
+      <Helmet title="Catalogo" />
+      <h1>Catalog</h1>
+    </>
+  )
 }
