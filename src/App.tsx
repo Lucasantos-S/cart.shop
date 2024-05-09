@@ -1,12 +1,12 @@
-import { Button } from './components/ui/button'
 import './globals.css'
 
-function App() {
+import { Button } from './components/ui/button'
 
+function App() {
   return (
-   <div className='min-h-screen w-screen flex items-center justify-center'>
-    <Button >Click</Button>
-   </div>
+    <div className="flex min-h-screen w-screen items-center justify-center">
+      <Button>Click</Button>
+    </div>
   )
 }
 
