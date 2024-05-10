@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
+import Title from '@/components/title'
 import { Button } from '@/components/ui/button'
 
 import CatalogProductCard from './catalog-product-card'
@@ -9,13 +10,9 @@ export default function Catalog() {
     <>
       <Helmet title="Catalogo" />
       <div className="flex w-screen flex-col  space-y-4  ">
-        <header className="animate-left w-full  ">
-          <h1 className=" text-center text-3xl font-bold tracking-tight">
-            Catalogo
-          </h1>
-        </header>
+        <Title title="Catalogo" />
         <main className="animate-left flex flex-1 flex-col space-y-2 overflow-auto px-8">
-          {Array.from({ length: 10 }, (_, index) => (
+          {Array.from({ length: 6 }, (_, index) => (
             <CatalogProductCard key={index} />
           ))}
         </main>
