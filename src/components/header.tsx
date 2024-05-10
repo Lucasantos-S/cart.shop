@@ -1,5 +1,5 @@
 import { Separator } from '@radix-ui/react-separator'
-import { Home, ShoppingCart } from 'lucide-react'
+import { ChefHat, Home } from 'lucide-react'
 
 import NavLink from './nav-link'
 
@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <div className="border-b">
       <div className="flex h-16 items-center gap-6 px-6 ">
-        <ShoppingCart className="h-6 w-6" />
+        <ChefHat className="h-6 w-6" />
         <Separator
           orientation="vertical"
           className="h-6 w-[2px] bg-muted-foreground/50"
