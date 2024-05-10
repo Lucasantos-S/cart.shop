@@ -68,10 +68,19 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        left: {
+          from: {
+            opacity: '0',
+            transform: 'translate(-5px)',
+            animation: 'animeLeft 0.6s forwards',
+          },
+          to: { opacity: '1', transform: 'initial' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        left: 'left 0.3s forwards',
       },
     },
   },
