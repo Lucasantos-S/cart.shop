@@ -6,7 +6,7 @@ export default function CatalogProductCard() {
   return (
     <Link
       to={'/product'}
-      className="flex h-28 w-full cursor-pointer items-center space-x-4 rounded-md border border-card-foreground p-4"
+      className="border-input-foreground flex h-28 w-full cursor-pointer items-center space-x-4 rounded-md border p-4"
     >
       <div className="h-16 rounded-lg">
         <img className="h-full w-full object-cover" src={img} alt="" />
