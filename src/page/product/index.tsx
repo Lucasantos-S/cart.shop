@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
+import { toast } from 'sonner'
 import { z } from 'zod'
 
 import { getProductById } from '@/api/get-product-by-id'
@@ -45,6 +46,7 @@ export default function Product() {
   })
 
   const onSubmit = (data: ProductSchema) => {
+    toast.success('Pedido adicionar no carrinho')
     console.log({
       ...data,
       quantity,
