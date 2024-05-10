@@ -58,7 +58,7 @@ export default function Product() {
   if (isErrorProduct) return <div>Error</div>
   return (
     <>
-      <Helmet title="Produto" />
+      <Helmet title={productFn?.name} />
       <div className="flex w-screen flex-col  space-y-4  ">
         <Title title={productFn?.name as string} />
         <main className=" flex animate-left flex-col items-center space-y-2 overflow-auto px-8">

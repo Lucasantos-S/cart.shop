@@ -3,9 +3,9 @@ import Skeleton from '@/components/ui/skeleton'
 export default function ProductSkeleton() {
   return (
     <div className="flex w-screen flex-col  space-y-4  ">
-      <div className="flex items-center justify-center">
+      <header className="flex items-center justify-center">
         <Skeleton className="h-10 w-32" />
-      </div>
+      </header>
       <main className=" flex animate-left flex-col items-center space-y-2 overflow-auto px-8">
         <Skeleton className="mt-10 h-40 w-96 " />
         <div className="flex w-full flex-col space-y-2">
