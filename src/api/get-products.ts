@@ -5,10 +5,11 @@ export interface GetProductsResponse {
   name: string
   price: number
   description: string
+  img: string
 }
 
-export async function getProduct() {
-  const response = await api.get<GetProductsResponse>('product')
+export async function getProducts() {
+  const response = await api.get<GetProductsResponse[]>('products')
 
   return response.data
 }

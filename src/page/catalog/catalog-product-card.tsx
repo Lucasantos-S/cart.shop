@@ -1,19 +1,31 @@
 import { Link } from 'react-router-dom'
 
-import img from '../../assets/jordan1.png'
+import { GetProductsResponse } from '@/api/get-products'
 
-export default function CatalogProductCard() {
+interface CatalogProductCardProps {
+  productsData: GetProductsResponse
+}
+
+export default function CatalogProductCard({
+  productsData,
+}: CatalogProductCardProps) {
   return (
     <Link
       to={'/product'}
-      className="border-input-foreground flex h-28 w-full cursor-pointer items-center space-x-4 rounded-md border p-4"
+      className="border-input-foreground flex min-h-28 w-full cursor-pointer items-center space-x-4 rounded-md border p-4"
     >
-      <div className="h-16 rounded-lg">
-        <img className="h-full w-full object-cover" src={img} alt="" />
+      <div className=" w-20 rounded-lg">
+        <img
+          className="h-full w-full object-cover"
+          src={productsData?.img}
+          alt=""
+        />
       </div>
       <div className="flex flex-col">
-        <h2 className="text-base font-bold tracking-tight">Air Jordan</h2>
-        <p className="text-muted-foreground">R$500,00</p>
+        <h2 className="text-base font-bold tracking-tight">
+          {productsData?.name}
+        </h2>
+        <p className="text-muted-foreground">{productsData?.price}</p>
       </div>
     </Link>
   )
