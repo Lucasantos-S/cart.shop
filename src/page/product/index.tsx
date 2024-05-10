@@ -1,17 +1,20 @@
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useQuery } from '@tanstack/react-query'
 import { Minus, Plus } from 'lucide-react'
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { z } from 'zod'
 
+import { getProductById } from '@/api/get-product-by-id'
 import Title from '@/components/title'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { formatPrice } from '@/lib/utils'
 
-import img from '../../assets/jordan1.png'
+import ProductSkeleton from './product-skeleton'
 
 const productSchema = z.object({
   observation: z.string().nullable(),
@@ -22,6 +25,17 @@ export type ProductSchema = z.infer<typeof productSchema>
 export default function Product() {
   const navigate = useNavigate()
 
+  const { productId } = useParams()
+
+  const {
+    data: productFn,
+    isLoading: isLoadingProduct,
+    isError: isErrorProduct,
+  } = useQuery({
+    queryKey: ['product', productId],
+    queryFn: () => getProductById(productId as string),
+  })
+
   const [quantity, setQuantity] = useState(1)
   const { register, handleSubmit } = useForm({
     resolver: zodResolver(productSchema),
@@ -31,28 +45,40 @@ export default function Product() {
   })
 
   const onSubmit = (data: ProductSchema) => {
-    console.log(data)
+    console.log({
+      ...data,
+      quantity,
+      total: (productFn?.price as number) * quantity,
+      product: productFn,
+    })
     navigate('/cart')
   }
+
+  if (isLoadingProduct) return <ProductSkeleton />
+  if (isErrorProduct) return <div>Error</div>
   return (
     <>
       <Helmet title="Produto" />
       <div className="flex w-screen flex-col  space-y-4  ">
-        <Title title="Produto" />
-        <main className="flex animate-left flex-col items-center space-y-2 overflow-auto px-8">
-          <img className=" h-50 w-80 object-cover" src={img} alt="" />
+        <Title title={productFn?.name as string} />
+        <main className=" flex animate-left flex-col items-center space-y-2 overflow-auto px-8">
+          <img
+            className=" mt-10 h-40 object-cover"
+            src={productFn?.img}
+            alt=""
+          />
           <div className="flex w-full flex-col space-y-2">
-            <p className="text-lg font-bold -tracking-tight text-foreground">
-              Tenis de nasquete
+            <p className="w-80 text-lg text-muted-foreground">
+              {productFn?.description}
             </p>
-            <span className="text-lg font-bold -tracking-tight text-muted-foreground">
-              R$ 500,00
+            <span className="text-lg font-bold -tracking-tight text-foreground">
+              {formatPrice(productFn?.price as number)}
             </span>
           </div>
         </main>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex w-full flex-col gap-10 p-8"
+          className="flex h-[350px] w-full flex-1 flex-col gap-10 p-8"
         >
           <section className="flex flex-col space-y-2">
             <Label htmlFor="observation" className="text-base">
@@ -76,6 +102,7 @@ export default function Product() {
                 className="flex h-8 w-8 items-center justify-center p-0"
               >
                 <Minus />
+                <span className="sr-only">diminuir 1 item do pedido</span>
               </Button>
               <input
                 disabled
@@ -91,6 +118,7 @@ export default function Product() {
                 className="flex h-8 w-8 items-center justify-center p-0"
               >
                 <Plus />
+                <span className="sr-only">Aumentar 1 item do pedido</span>
               </Button>
             </div>
             <Button className="flex-1">Adicionar</Button>

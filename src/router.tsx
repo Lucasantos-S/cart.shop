@@ -15,7 +15,7 @@ export default function Routers() {
         <Route path="/" errorElement={<NotFound />} element={<LeyoutDefault />}>
           <Route path="/" element={<Catalog />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/Product" element={<Product />} />
+          <Route path="/product/:productId" element={<Product />} />
         </Route>
         <Route path="/success" element={<SendWithSuccess />} />
         <Route path="*" element={<NotFound />} />
