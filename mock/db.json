@@ -1,5 +1,5 @@
 {
-    "products":[
+    "products": [
         {
             "id": "58d6048f-53b9-4cf1-94ca-ff1e5a2e1697",
             "name": "Big Mac",
@@ -34,9 +34,13 @@
             "price": 7.99,
             "description": "Sorvete de baunilha com pedaços de biscoito Oreo e cobertura de chocolate.",
             "img": "https://private-user-images.githubusercontent.com/84051326/329676822-ae6429b2-652c-4462-8019-86c4c983895f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTUzNjM4MDEsIm5iZiI6MTcxNTM2MzUwMSwicGF0aCI6Ii84NDA1MTMyNi8zMjk2NzY4MjItYWU2NDI5YjItNjUyYy00NDYyLTgwMTktODZjNGM5ODM4OTVmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MTAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTEwVDE3NTE0MVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWEyODMxZGI3ZTc3MzdlZjM4ZDFlY2I0MzkzMjA5MjFhNmZiYWM1NDA2NzkwNGVhMTQyNzJhMjY1ZGRmNTY5YTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.3UlNMN1rFFHj84ZI9kQMSdXpuUg0P5rJrQ5oG0A1NF4"
+        },
+        {
+            "id": "d6ef5488-fb5b-4a58-9a4f-90827735dca6",
+            "name": "Sundae de Morango",
+            "price": 6.99,
+            "description": "Sorvete de baunilha coberto com calda de morango e chantilly.",
+            "img": "https://private-user-images.githubusercontent.com/84051326/329719505-a0b6acd2-c73f-4c04-bea0-bb19dfff39e6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTUzNzYwMjksIm5iZiI6MTcxNTM3NTcyOSwicGF0aCI6Ii84NDA1MTMyNi8zMjk3MTk1MDUtYTBiNmFjZDItYzczZi00YzA0LWJlYTAtYmIxOWRmZmYzOWU2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MTAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTEwVDIxMTUyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMwNmMxODVhZGI1Y2Q4MzQzYmYyZmQxMTlmNjE1ZDBjMWZmZWY5MGRjMzQyYzE0YzRiNDJmNjVkNmU5MzBkYzQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.YBMU17GA3Viw4ImNxLS5z9nhwHRTNVKrgOtMTf9AOUM"
         }
     ]
 }
-
-
-
