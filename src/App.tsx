@@ -6,7 +6,7 @@ import Routers from './router'
 
 function App() {
   return (
-    <div className="flex min-h-screen w-screen items-center justify-center">
+    <div className="min-h-screen">
       <HelmetProvider>
         <Helmet titleTemplate="%s | cart.shop" />
         <Routers />
