@@ -5,42 +5,42 @@
             "name": "Big Mac",
             "price": 12.99,
             "description": "Dois hambúrgueres, alface, queijo, molho especial, cebola e picles em um pão com gergelim.",
-            "img": "https://private-user-images.githubusercontent.com/84051326/329671311-695bca44-1f85-42e0-950e-8a0c5c832836.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTUzNjI0MDcsIm5iZiI6MTcxNTM2MjEwNywicGF0aCI6Ii84NDA1MTMyNi8zMjk2NzEzMTEtNjk1YmNhNDQtMWY4NS00MmUwLTk1MGUtOGEwYzVjODMyODM2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MTAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTEwVDE3MjgyN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZiOGQ4NTAyZWZjNGRlNmUzOGM5OTE0MmNhMDU0OWE4M2NkZDhkNTAwYmU2NjRmZmY1ZWRhYjBiNWYyOGVjNjYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.gkmQvmrF0CmBabNJtdmqKIOMWft-YqIz230KeiWs_LQ"
+            "img": "https://i.postimg.cc/ydF6fYZM/5882482de81acb96424ffaac.png"
         },
         {
             "id": "b43aa2d9-6c7b-4ad5-a2d7-4ae0f8a94fb3",
             "name": "McChicken",
             "price": 9.99,
             "description": "Filé de frango empanado, alface e maionese em um pão de hambúrguer.",
-            "img": "https://private-user-images.githubusercontent.com/84051326/329672304-a20769d5-12e9-4966-8585-54d7f04dda94.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTUzNjMxODMsIm5iZiI6MTcxNTM2Mjg4MywicGF0aCI6Ii84NDA1MTMyNi8zMjk2NzIzMDQtYTIwNzY5ZDUtMTJlOS00OTY2LTg1ODUtNTRkN2YwNGRkYTk0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MTAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTEwVDE3NDEyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTRiMDcxM2YzODYwMDJhMGVhMzJhOWFkNzU3NjQ4OTg1YjIyYmJkMDgyZmY4MjEzZDQwNzRhYmRlZjA1ZjJhNTUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.xxVSldnr_KPYfDRIv5rnAErhxM-DT3QJtNhe30VsXIk"
+            "img": "https://i.postimg.cc/vThYsqXX/58824846e81acb96424ffaad.png"
         },
         {
             "id": "06af7399-5cc1-45b2-895a-1fd08555d1c3",
             "name": "McFish",
             "price": 10.99,
             "description": "Filete de peixe empanado, queijo e molho tártaro em um pão de hambúrguer com gergelim.",
-            "img": "https://private-user-images.githubusercontent.com/84051326/329672765-8cf10fad-9f19-40dd-9339-e38c001995cd.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTUzNjMyNDksIm5iZiI6MTcxNTM2Mjk0OSwicGF0aCI6Ii84NDA1MTMyNi8zMjk2NzI3NjUtOGNmMTBmYWQtOWYxOS00MGRkLTkzMzktZTM4YzAwMTk5NWNkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MTAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTEwVDE3NDIyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTNkMjIxMmU0MTAyMWY5MmRjNGRiNzNhZGRhZDk4MDU4MDYyMThkMmQzMjJjZGJjOTFkZGU4NzM0NDg4OTcyZTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.YZHbzfNrDtBORdoqF_nwRfWfQ0vjBzcOqRjGuTsnGNo"
+            "img": "https://i.postimg.cc/c411mW4z/58824b29e81acb96424ffab8.png"
         },
         {
             "id": "83311c2a-221a-4f4b-8553-d935a9f96c0e",
             "name": "McNuggets (6 peças)",
             "price": 8.99,
             "description": "Deliciosos pedaços de frango empanado, perfeitos para compartilhar.",
-            "img": "https://private-user-images.githubusercontent.com/84051326/329673934-14a5d048-b183-4a0b-98c4-a15fdb40eef3.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTUzNjMwNDEsIm5iZiI6MTcxNTM2Mjc0MSwicGF0aCI6Ii84NDA1MTMyNi8zMjk2NzM5MzQtMTRhNWQwNDgtYjE4My00YTBiLTk4YzQtYTE1ZmRiNDBlZWYzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MTAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTEwVDE3MzkwMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTI4MzBkNTZhMjkzYWYyNWRhYzJkZmM5ZTI1ZDVhNTlkYjYyNjRjZDM4OWU0NmRhOWUwNzdkMTE3MjNmNWEzMjMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.qjnCVPnHDZgjyJA829AjWvznzZx2ON8SSaJpEfZwyaQ"
+            "img": "https://i.postimg.cc/Pr6XV7C5/5906074f0cbeef0acff9a640.png"
         },
         {
             "id": "b95c191f-cc7c-4893-b951-f6ba3f321d02",
             "name": "McFlurry Oreo",
             "price": 7.99,
             "description": "Sorvete de baunilha com pedaços de biscoito Oreo e cobertura de chocolate.",
-            "img": "https://private-user-images.githubusercontent.com/84051326/329676822-ae6429b2-652c-4462-8019-86c4c983895f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTUzNjM4MDEsIm5iZiI6MTcxNTM2MzUwMSwicGF0aCI6Ii84NDA1MTMyNi8zMjk2NzY4MjItYWU2NDI5YjItNjUyYy00NDYyLTgwMTktODZjNGM5ODM4OTVmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MTAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTEwVDE3NTE0MVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWEyODMxZGI3ZTc3MzdlZjM4ZDFlY2I0MzkzMjA5MjFhNmZiYWM1NDA2NzkwNGVhMTQyNzJhMjY1ZGRmNTY5YTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.3UlNMN1rFFHj84ZI9kQMSdXpuUg0P5rJrQ5oG0A1NF4"
+            "img": "https://i.postimg.cc/pL42RnYN/5cb7759aa7c7755bf004c104.png"
         },
         {
             "id": "d6ef5488-fb5b-4a58-9a4f-90827735dca6",
             "name": "Sundae de Morango",
             "price": 6.99,
             "description": "Sorvete de baunilha coberto com calda de morango e chantilly.",
-            "img": "https://private-user-images.githubusercontent.com/84051326/329719505-a0b6acd2-c73f-4c04-bea0-bb19dfff39e6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTUzNzYwMjksIm5iZiI6MTcxNTM3NTcyOSwicGF0aCI6Ii84NDA1MTMyNi8zMjk3MTk1MDUtYTBiNmFjZDItYzczZi00YzA0LWJlYTAtYmIxOWRmZmYzOWU2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MTAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTEwVDIxMTUyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMwNmMxODVhZGI1Y2Q4MzQzYmYyZmQxMTlmNjE1ZDBjMWZmZWY5MGRjMzQyYzE0YzRiNDJmNjVkNmU5MzBkYzQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.YBMU17GA3Viw4ImNxLS5z9nhwHRTNVKrgOtMTf9AOUM"
+            "img": "https://i.postimg.cc/MZ7X5t0n/kisspng-sundae-dulce-de-leche-mcflurry-ice-cream-mcdonald-5afdc43b825346-5585053515265802835338.png"
         }
     ]
 }

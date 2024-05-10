@@ -12,6 +12,7 @@ import { getProductById } from '@/api/get-product-by-id'
 import Title from '@/components/title'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
+import Skeleton from '@/components/ui/skeleton'
 import { Textarea } from '@/components/ui/textarea'
 import { formatPrice } from '@/lib/utils'
 
@@ -64,11 +65,15 @@ export default function Product() {
       <div className="flex w-screen flex-col  space-y-4  ">
         <Title title={productFn?.name as string} />
         <main className=" flex animate-left flex-col items-center space-y-2 overflow-auto px-8">
-          <img
-            className=" mt-10 h-40 object-cover"
-            src={productFn?.img}
-            alt=""
-          />
+          {productFn?.img ? (
+            <img
+              className=" mt-10 h-40 object-cover"
+              src={productFn?.img}
+              alt={productFn?.name}
+            />
+          ) : (
+            <Skeleton className="mt-10 h-40 w-96 " />
+          )}
           <div className="flex w-full flex-col space-y-2">
             <p className="w-80 text-lg text-muted-foreground">
               {productFn?.description}
