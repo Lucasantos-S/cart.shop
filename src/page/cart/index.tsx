@@ -1,10 +1,12 @@
 import { Helmet } from 'react-helmet-async'
+import { useNavigate } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
 
 import OrderProductCard from './order-product-card'
 
 export default function Cart() {
+  const navigate = useNavigate()
   const order = {
     id: '1',
     observation: '',
@@ -31,7 +33,14 @@ export default function Cart() {
             <p className=" text-lg font-bold tracking-tight">Total</p>
             <p className="text-lg font-bold tracking-tight">R$100,00</p>
           </div>
-          <Button>Fazer pedido</Button>
+          <Button
+            type="button"
+            onClick={() => {
+              navigate('/success')
+            }}
+          >
+            Fazer pedido
+          </Button>
         </section>
       </div>
     </>
