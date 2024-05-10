@@ -1,0 +1,16 @@
+{
+    "product": [
+        {
+            "id": "966171b6-2550-4ec1-bd8f-afcb196ec6a5",
+            "name": "Air jordan 1",
+            "price": 100,
+            "description": "O melhor tenis"
+        },
+        {
+            "id": "32c0dcdb-3199-4aa1-9848-11ee803bd0ed",
+            "name": "Air jordan",
+            "price": 300,
+            "description": "O segundo melhor tenis"
+        }
+    ]
+}

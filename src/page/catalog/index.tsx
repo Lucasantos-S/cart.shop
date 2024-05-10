@@ -11,7 +11,7 @@ export default function Catalog() {
       <Helmet title="Catalogo" />
       <div className="flex w-screen flex-col  space-y-4  ">
         <Title title="Catalogo" />
-        <main className="animate-left flex flex-1 flex-col space-y-2 overflow-auto px-8">
+        <main className="flex flex-1 animate-left flex-col space-y-2 overflow-auto px-8">
           {Array.from({ length: 6 }, (_, index) => (
             <CatalogProductCard key={index} />
           ))}
