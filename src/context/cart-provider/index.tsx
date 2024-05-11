@@ -42,13 +42,38 @@ function CartProvider({ children }: ContextProps) {
   }
 
   function removedCartItem(cartItemId: string) {
+    if (cart.cartItems.length <= 1) {
+      setCart({} as CartState)
+      return
+    }
     const newCart = cart.cartItems.filter((item) => item.id !== cartItemId)
+
+    const { totalItems, totalPrice } = calculateTotalItemsAndPrice(newCart)
+
     setCart((cart) => {
       return {
         ...cart,
         cartItems: [...newCart],
+        totalPrice,
+        totalItems,
       }
     })
+  }
+
+  function calculateTotalItemsAndPrice(newCart: cartItem[]) {
+    const { totalItems, totalPrice } = newCart.reduce(
+      (acc, item) => {
+        acc.totalPrice += item.quantity * item.product.price
+        acc.totalItems += item.quantity
+        return acc
+      },
+      { totalItems: 0, totalPrice: 0 },
+    )
+
+    return {
+      totalItems,
+      totalPrice,
+    }
   }
 
   return (
