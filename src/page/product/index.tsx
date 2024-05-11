@@ -15,7 +15,7 @@ import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import Skeleton from '@/components/ui/skeleton'
 import { Textarea } from '@/components/ui/textarea'
-import { useCard } from '@/context/cart-provider'
+import { useCart } from '@/context/cart-provider'
 import { formatPrice } from '@/lib/utils'
 
 import ProductSkeleton from './product-skeleton'
@@ -29,7 +29,7 @@ export type ProductSchema = z.infer<typeof productSchema>
 export default function Product() {
   const navigate = useNavigate()
 
-  const { addToItemCart } = useCard()
+  const { addToItemCart } = useCart()
 
   const { productId } = useParams()
 

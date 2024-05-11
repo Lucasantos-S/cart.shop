@@ -48,14 +48,14 @@ function CartProvider({ children }: ContextProps) {
   )
 }
 
-function useCard() {
+function useCart() {
   const context = React.useContext(CardContext)
 
   if (!context) {
-    throw new Error('useCard must be used within a UseCardProvider')
+    throw new Error('useCart must be used within a useCartProvider')
   }
 
   return context
 }
 
-export { CartProvider, useCard }
+export { CartProvider, useCart }
