@@ -41,8 +41,18 @@ function CartProvider({ children }: ContextProps) {
     })
   }
 
+  function removedCartItem(cartItemId: string) {
+    const newCart = cart.cartItems.filter((item) => item.id !== cartItemId)
+    setCart((cart) => {
+      return {
+        ...cart,
+        cartItems: [...newCart],
+      }
+    })
+  }
+
   return (
-    <CardContext.Provider value={{ cart, addToItemCart }}>
+    <CardContext.Provider value={{ cart, addToItemCart, removedCartItem }}>
       {children}
     </CardContext.Provider>
   )

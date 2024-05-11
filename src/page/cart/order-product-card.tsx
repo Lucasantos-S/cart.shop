@@ -39,7 +39,7 @@ export default function OrderProductCard({
         </div>
       </section>
       <OrderAddOrRemove
-        idCartItem={orderProductData.id}
+        cartItemId={orderProductData.id}
         quantity={orderProductData.quantity}
       />
     </div>

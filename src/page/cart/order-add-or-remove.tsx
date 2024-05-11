@@ -1,16 +1,26 @@
 import { Minus, Plus, Trash2 } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import { useCart } from '@/context/cart-provider'
 
 interface OrderAddOrRemoveProps {
-  idCartItem: string
+  cartItemId: string
   quantity: number
 }
 
-export default function OrderAddOrRemove({ quantity }: OrderAddOrRemoveProps) {
+export default function OrderAddOrRemove({
+  cartItemId,
+  quantity,
+}: OrderAddOrRemoveProps) {
+  const { removedCartItem } = useCart()
   return (
     <section className="flex flex-col items-center gap-2">
-      <Button variant={'outline'}>
+      <Button
+        onClick={() => {
+          removedCartItem(cartItemId)
+        }}
+        variant={'outline'}
+      >
         Remover
         <Trash2 className="ml-2 h-4 w-4" />
         <span className="sr-only">remover item do pedido</span>
