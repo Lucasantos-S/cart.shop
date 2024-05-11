@@ -1,11 +1,12 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useQuery } from '@tanstack/react-query'
 import { Minus, Plus } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useForm } from 'react-hook-form'
 import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'sonner'
+import { v4 as uuidv4 } from 'uuid'
 import { z } from 'zod'
 
 import { getProductById } from '@/api/get-product-by-id'
@@ -14,18 +15,21 @@ import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import Skeleton from '@/components/ui/skeleton'
 import { Textarea } from '@/components/ui/textarea'
+import { useCard } from '@/context/cart-provider'
 import { formatPrice } from '@/lib/utils'
 
 import ProductSkeleton from './product-skeleton'
 
 const productSchema = z.object({
-  observation: z.string().nullable(),
+  observation: z.string(),
 })
 
 export type ProductSchema = z.infer<typeof productSchema>
 
 export default function Product() {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
+
+  const { manageCart, order } = useCard()
 
   const { productId } = useParams()
 
@@ -48,14 +52,21 @@ export default function Product() {
 
   const onSubmit = (data: ProductSchema) => {
     toast.success('Pedido adicionar no carrinho')
-    console.log({
-      ...data,
-      quantity,
-      total: (productFn?.price as number) * quantity,
-      product: productFn,
-    })
-    navigate('/cart')
+    if (productFn) {
+      manageCart({
+        ...data,
+        id: uuidv4(),
+        quantity,
+        total: (productFn?.price as number) * quantity,
+        product: productFn,
+      })
+      // navigate('/cart')
+    }
   }
+
+  useEffect(() => {
+    console.log(order)
+  }, [order])
 
   if (isLoadingProduct) return <ProductSkeleton />
   if (isErrorProduct) return <div>Error</div>
