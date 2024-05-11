@@ -11,23 +11,18 @@ import {
 const CardContext = React.createContext({} as ICardContext)
 
 function CartProvider({ children }: ContextProps) {
-  const [order, setOrder] = useState({} as CartState)
+  const [cart, setCart] = useState({} as CartState)
 
-  function manageCart(cartItem: cartItem) {
-    if (!order.cartItems) {
-      setOrder({
-        id: uuidv4(),
-        totalItems: cartItem.quantity,
-        totalPrice: cartItem.total,
-        cartItems: [cartItem],
-      })
+  function addToItemCart(cartItem: cartItem) {
+    if (!cart.cartItems) {
+      createdCart(cartItem)
       return
     }
     updateCart(cartItem)
   }
 
   function updateCart(cartItem: cartItem) {
-    setOrder((cart) => {
+    setCart((cart) => {
       return {
         ...cart,
         cartItems: [...cart.cartItems, cartItem],
@@ -37,8 +32,17 @@ function CartProvider({ children }: ContextProps) {
     })
   }
 
+  function createdCart(cartItem: cartItem) {
+    setCart({
+      id: uuidv4(),
+      totalItems: cartItem.quantity,
+      totalPrice: cartItem.total,
+      cartItems: [cartItem],
+    })
+  }
+
   return (
-    <CardContext.Provider value={{ order, manageCart }}>
+    <CardContext.Provider value={{ cart, addToItemCart }}>
       {children}
     </CardContext.Provider>
   )

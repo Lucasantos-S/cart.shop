@@ -20,6 +20,6 @@ export interface CartState {
 }
 
 export interface ICardContext {
-  manageCart: (cardItem: cartItem) => void
-  order: CartState
+  addToItemCart: (cardItem: cartItem) => void
+  cart: CartState
 }
