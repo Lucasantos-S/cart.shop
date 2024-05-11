@@ -3,7 +3,7 @@ import { formatPrice } from '@/lib/utils'
 
 import OrderAddOrRemove from './order-add-or-remove'
 
-interface OrderProductCardProps {
+export interface OrderProductCardProps {
   orderProductData: {
     id: string
     observation: string
@@ -38,7 +38,10 @@ export default function OrderProductCard({
           </p>
         </div>
       </section>
-      <OrderAddOrRemove />
+      <OrderAddOrRemove
+        idCartItem={orderProductData.id}
+        quantity={orderProductData.quantity}
+      />
     </div>
   )
 }

@@ -2,7 +2,12 @@ import { Minus, Plus, Trash2 } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 
-export default function OrderAddOrRemove() {
+interface OrderAddOrRemoveProps {
+  idCartItem: string
+  quantity: number
+}
+
+export default function OrderAddOrRemove({ quantity }: OrderAddOrRemoveProps) {
   return (
     <section className="flex flex-col items-center gap-2">
       <Button variant={'outline'}>
@@ -21,7 +26,7 @@ export default function OrderAddOrRemove() {
         </Button>
         <input
           disabled
-          value={1}
+          value={quantity}
           className="flex h-8 w-8 cursor-pointer items-center justify-center rounded border border-input text-center"
         />
         <Button
