@@ -6,6 +6,7 @@ import {
   CartState,
   ContextProps,
   ICardContext,
+  UpdateQuantityFromCart,
 } from './cart-provider.structure'
 
 const CardContext = React.createContext({} as ICardContext)
@@ -13,7 +14,10 @@ const CardContext = React.createContext({} as ICardContext)
 function CartProvider({ children }: ContextProps) {
   const [cart, setCart] = useState({} as CartState)
 
-  function updateItemQuantityInCart(cartItemId: string, newQuantity: number) {
+  function updateItemQuantityInCart({
+    cartItemId,
+    newQuantity,
+  }: UpdateQuantityFromCart) {
     setCart((cart) => {
       const updatedCartItems = cart.cartItems.map((item) => {
         if (item.id === cartItemId) {
@@ -39,8 +43,18 @@ function CartProvider({ children }: ContextProps) {
     })
   }
 
-  function removeItemQuantityFromCart(cartItemId: string, newQuantity: number) {
-    updateItemQuantityInCart(cartItemId, newQuantity)
+  function removeItemQuantityFromCart({
+    cartItemId,
+    newQuantity,
+  }: UpdateQuantityFromCart) {
+    if (newQuantity >= 1) updateItemQuantityInCart({ cartItemId, newQuantity })
+  }
+
+  function addQuantityFromCart({
+    cartItemId,
+    newQuantity,
+  }: UpdateQuantityFromCart) {
+    updateItemQuantityInCart({ cartItemId, newQuantity })
   }
 
   function addToItemCart(cartItem: cartItem) {
@@ -111,8 +125,9 @@ function CartProvider({ children }: ContextProps) {
       value={{
         cart,
         addToItemCart,
-        removedCartItem,
+        addQuantityFromCart,
         removeItemQuantityFromCart,
+        removedCartItem,
       }}
     >
       {children}
