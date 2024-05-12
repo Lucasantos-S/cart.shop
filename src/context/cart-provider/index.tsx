@@ -13,6 +13,33 @@ const CardContext = React.createContext({} as ICardContext)
 function CartProvider({ children }: ContextProps) {
   const [cart, setCart] = useState({} as CartState)
 
+  function removeItemQuantityFromCart(cartItemId: string) {
+    setCart((cart) => {
+      const updatedCartItems = cart.cartItems.map((item) => {
+        if (item.id === cartItemId) {
+          const newQuantity = item.quantity - 1
+          const newTotal = newQuantity * item.product.price
+          return {
+            ...item,
+            quantity: newQuantity,
+            total: newTotal,
+          }
+        }
+        return item
+      })
+
+      const { totalItems, totalPrice } =
+        calculateTotalItemsAndPrice(updatedCartItems)
+
+      return {
+        ...cart,
+        cartItems: updatedCartItems,
+        totalItems,
+        totalPrice,
+      }
+    })
+  }
+
   function addToItemCart(cartItem: cartItem) {
     if (!cart.cartItems) {
       createdCart(cartItem)
@@ -77,7 +104,14 @@ function CartProvider({ children }: ContextProps) {
   }
 
   return (
-    <CardContext.Provider value={{ cart, addToItemCart, removedCartItem }}>
+    <CardContext.Provider
+      value={{
+        cart,
+        addToItemCart,
+        removedCartItem,
+        removeItemQuantityFromCart,
+      }}
+    >
       {children}
     </CardContext.Provider>
   )

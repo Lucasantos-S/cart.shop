@@ -22,5 +22,6 @@ export interface CartState {
 export interface ICardContext {
   addToItemCart: (cardItem: cartItem) => void
   removedCartItem: (cartItemId: string) => void
+  removeItemQuantityFromCart: (cartItemId: string) => void
   cart: CartState
 }

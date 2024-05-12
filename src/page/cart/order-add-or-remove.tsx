@@ -12,7 +12,8 @@ export default function OrderAddOrRemove({
   cartItemId,
   quantity,
 }: OrderAddOrRemoveProps) {
-  const { removedCartItem } = useCart()
+  const { removedCartItem, removeItemQuantityFromCart } = useCart()
+
   return (
     <section className="flex flex-col items-center gap-2">
       <Button
@@ -23,16 +24,18 @@ export default function OrderAddOrRemove({
       >
         Remover
         <Trash2 className="ml-2 h-4 w-4" />
-        <span className="sr-only">remover item do pedido</span>
+        <span className="sr-only">remover item do pedcartItemIdo</span>
       </Button>
       <div className="flex items-center gap-1">
         <Button
+          disabled={quantity === 1}
+          onClick={() => removeItemQuantityFromCart(cartItemId)}
           type="button"
           variant={'outline'}
           className="flex h-8 w-8 items-center justify-center p-0"
         >
           <Minus />
-          <span className="sr-only">diminuir 1 item do pedido</span>
+          <span className="sr-only">diminuir 1 item do pedcartItemIdo</span>
         </Button>
         <input
           disabled
@@ -45,7 +48,7 @@ export default function OrderAddOrRemove({
           className="flex h-8 w-8 items-center justify-center p-0"
         >
           <Plus />
-          <span className="sr-only">Aumentar 1 item do pedido</span>
+          <span className="sr-only">Aumentar 1 item do pedcartItemIdo</span>
         </Button>
       </div>
     </section>
