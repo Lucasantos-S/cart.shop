@@ -29,7 +29,9 @@ export default function OrderAddOrRemove({
       <div className="flex items-center gap-1">
         <Button
           disabled={quantity === 1}
-          onClick={() => removeItemQuantityFromCart(cartItemId)}
+          onClick={() =>
+            removeItemQuantityFromCart(cartItemId, (quantity = quantity - 1))
+          }
           type="button"
           variant={'outline'}
           className="flex h-8 w-8 items-center justify-center p-0"
