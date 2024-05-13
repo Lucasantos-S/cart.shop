@@ -8,7 +8,7 @@ export default function EmptyCart() {
   return (
     <div className="flex h-full w-screen  animate-left items-center justify-center ">
       <div className="mt-28 flex flex-col items-center">
-        <h1 className="max-w-[400px] text-center text-3xl tracking-tight text-foreground">
+        <h1 className="max-w-[400px] text-center text-3xl font-bold tracking-tight text-foreground">
           O carrinho de compras está vazio no momento.
         </h1>
         <EmptyCartAnimation />

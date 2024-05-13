@@ -1,7 +1,11 @@
+import { useMutation } from '@tanstack/react-query'
+import { Loader } from 'lucide-react'
 import { useMemo } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'sonner'
 
+import { submitOrdersFromCart } from '@/api/submit-orders-from-cart'
 import { Button } from '@/components/ui/button'
 import { useCart } from '@/context/cart-provider'
 import { formatPrice } from '@/lib/utils'
@@ -11,7 +15,18 @@ import OrderProductCard from './order-product-card'
 
 export default function Cart() {
   const navigate = useNavigate()
-  const { cart } = useCart()
+  const { cart, removedCart } = useCart()
+
+  const { mutateAsync: submitOrder, isPending: isLoadingSubmit } = useMutation({
+    mutationFn: submitOrdersFromCart,
+    onSuccess: () => {
+      removedCart()
+      navigate('/success')
+    },
+    onError: () => {
+      toast.error('Erro no envio do pedido, verifique e tente novamente...')
+    },
+  })
 
   const allItemsInCart = useMemo(() => {
     if (cart.cartItems)
@@ -38,12 +53,17 @@ export default function Cart() {
             </p>
           </div>
           <Button
+            disabled={isLoadingSubmit}
             type="button"
             onClick={() => {
-              navigate('/success')
+              submitOrder(cart)
             }}
           >
-            Fazer pedido
+            {isLoadingSubmit ? (
+              <Loader className="mr-2 h-4 w-4 animate-spin" />
+            ) : (
+              'Fazer pedido'
+            )}
           </Button>
         </section>
       </div>
