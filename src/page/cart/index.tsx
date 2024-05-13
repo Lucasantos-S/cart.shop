@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { useCart } from '@/context/cart-provider'
 import { formatPrice } from '@/lib/utils'
 
+import EmptyCart from './empty-cart'
 import OrderProductCard from './order-product-card'
 
 export default function Cart() {
@@ -19,7 +20,7 @@ export default function Cart() {
       })
   }, [cart])
 
-  if (!cart.cartItems) return null
+  if (!cart.cartItems) return <EmptyCart />
   return (
     <>
       <Helmet title="Carrinho" />
