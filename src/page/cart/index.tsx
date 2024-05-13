@@ -20,7 +20,7 @@ export default function Cart() {
       })
   }, [cart])
 
-  if (!cart.cartItems) return <EmptyCart />
+  if (cart.cartItems.length <= 0) return <EmptyCart />
   return (
     <>
       <Helmet title="Carrinho" />
