@@ -27,13 +27,8 @@ export interface UpdateQuantityFromCart {
 export interface ICardContext {
   cart: CartState
   addToItemCart: (cardItem: cartItem) => void
-  addQuantityFromCart: ({
-    cartItemId,
-    newQuantity,
-  }: UpdateQuantityFromCart) => void
-  removeItemQuantityFromCart: ({
-    cartItemId,
-    newQuantity,
-  }: UpdateQuantityFromCart) => void
+  addQuantityFromCart: (cartItemId: string, newQuantity: number) => void
+  removeItemQuantityFromCart: (cartItemId: string, newQuantity: number) => void
+  removedCart: () => void
   removedCartItem: (cartItemId: string) => void
 }

@@ -1,132 +1,70 @@
-import React, { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
+import React, { useCallback, useReducer } from 'react'
 
+import { cartReducer, initialState } from '@/reducers/cart-reducer'
 import {
-  cartItem,
-  CartState,
-  ContextProps,
-  ICardContext,
-  UpdateQuantityFromCart,
-} from './cart-provider.structure'
+  addNewItemToCartActions,
+  createNewCartActions,
+  removeCartActions,
+  removeItemFromCartActions,
+  updateItemQuantityInCartActions,
+} from '@/reducers/cart-reducer/actions'
+
+import { cartItem, ContextProps, ICardContext } from './cart-provider.structure'
 
 const CardContext = React.createContext({} as ICardContext)
 
 function CartProvider({ children }: ContextProps) {
-  const [cart, setCart] = useState({} as CartState)
+  const [cartState, dispatch] = useReducer(cartReducer, initialState)
 
-  function updateItemQuantityInCart({
-    cartItemId,
-    newQuantity,
-  }: UpdateQuantityFromCart) {
-    setCart((cart) => {
-      const updatedCartItems = cart.cartItems.map((item) => {
-        if (item.id === cartItemId) {
-          const newTotal = newQuantity * item.product.price
-          return {
-            ...item,
-            quantity: newQuantity,
-            total: newTotal,
-          }
-        }
-        return item
-      })
+  const removeItemQuantityFromCart = useCallback(
+    (cartItemId: string, newQuantity: number) => {
+      if (newQuantity >= 1)
+        dispatch(updateItemQuantityInCartActions({ cartItemId, newQuantity }))
+    },
+    [dispatch],
+  )
 
-      const { totalItems, totalPrice } =
-        calculateTotalItemsAndPrice(updatedCartItems)
+  const addQuantityFromCart = useCallback(
+    (cartItemId: string, newQuantity: number) => {
+      dispatch(updateItemQuantityInCartActions({ cartItemId, newQuantity }))
+    },
+    [dispatch],
+  )
 
-      return {
-        ...cart,
-        cartItems: updatedCartItems,
-        totalItems,
-        totalPrice,
+  const addToItemCart = useCallback(
+    (cartItem: cartItem) => {
+      if (!cartState.cartItems) {
+        dispatch(createNewCartActions(cartItem))
+        return
       }
-    })
+      dispatch(addNewItemToCartActions(cartItem))
+    },
+    [cartState.cartItems, dispatch],
+  )
+
+  function removedCart() {
+    dispatch(removeCartActions())
   }
 
-  function removeItemQuantityFromCart({
-    cartItemId,
-    newQuantity,
-  }: UpdateQuantityFromCart) {
-    if (newQuantity >= 1) updateItemQuantityInCart({ cartItemId, newQuantity })
-  }
-
-  function addQuantityFromCart({
-    cartItemId,
-    newQuantity,
-  }: UpdateQuantityFromCart) {
-    updateItemQuantityInCart({ cartItemId, newQuantity })
-  }
-
-  function addToItemCart(cartItem: cartItem) {
-    if (!cart.cartItems) {
-      createdCart(cartItem)
-      return
-    }
-    updateCart(cartItem)
-  }
-
-  function updateCart(cartItem: cartItem) {
-    setCart((cart) => {
-      return {
-        ...cart,
-        cartItems: [...cart.cartItems, cartItem],
-        totalPrice: cart.totalPrice + cartItem.total,
-        totalItems: cart.totalItems + cartItem.quantity,
+  const removedCartItem = useCallback(
+    (cartItemId: string) => {
+      if (cartState.cartItems.length <= 1) {
+        removedCart()
+        return
       }
-    })
-  }
-
-  function createdCart(cartItem: cartItem) {
-    setCart({
-      id: uuidv4(),
-      totalItems: cartItem.quantity,
-      totalPrice: cartItem.total,
-      cartItems: [cartItem],
-    })
-  }
-
-  function removedCartItem(cartItemId: string) {
-    if (cart.cartItems.length <= 1) {
-      setCart({} as CartState)
-      return
-    }
-    const newCart = cart.cartItems.filter((item) => item.id !== cartItemId)
-
-    const { totalItems, totalPrice } = calculateTotalItemsAndPrice(newCart)
-
-    setCart((cart) => {
-      return {
-        ...cart,
-        cartItems: [...newCart],
-        totalPrice,
-        totalItems,
-      }
-    })
-  }
-
-  function calculateTotalItemsAndPrice(newCart: cartItem[]) {
-    const { totalItems, totalPrice } = newCart.reduce(
-      (acc, item) => {
-        acc.totalPrice += item.quantity * item.product.price
-        acc.totalItems += item.quantity
-        return acc
-      },
-      { totalItems: 0, totalPrice: 0 },
-    )
-
-    return {
-      totalItems,
-      totalPrice,
-    }
-  }
+      dispatch(removeItemFromCartActions(cartItemId))
+    },
+    [cartState.cartItems.length, dispatch],
+  )
 
   return (
     <CardContext.Provider
       value={{
-        cart,
+        cart: cartState,
         addToItemCart,
         addQuantityFromCart,
         removeItemQuantityFromCart,
+        removedCart,
         removedCartItem,
       }}
     >

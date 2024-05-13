@@ -31,10 +31,7 @@ export default function OrderAddOrRemove({
         <Button
           disabled={quantity === 1}
           onClick={() =>
-            removeItemQuantityFromCart({
-              cartItemId,
-              newQuantity: quantity - 1,
-            })
+            removeItemQuantityFromCart(cartItemId, (quantity = quantity - 1))
           }
           type="button"
           variant={'outline'}
@@ -50,10 +47,7 @@ export default function OrderAddOrRemove({
         />
         <Button
           onClick={() =>
-            addQuantityFromCart({
-              cartItemId,
-              newQuantity: quantity + 1,
-            })
+            addQuantityFromCart(cartItemId, (quantity = quantity + 1))
           }
           type="button"
           variant={'outline'}
