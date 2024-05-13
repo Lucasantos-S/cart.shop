@@ -52,7 +52,9 @@
   }
   
 
-
+h1{
+  font-family: "Spectral", serif;
+}
   @layer base {
     * {
       @apply border-border;

@@ -7,7 +7,7 @@ export default function ProductSkeleton() {
         <Skeleton className="h-10 w-32" />
       </header>
       <main className=" flex animate-left flex-col items-center space-y-2 overflow-auto px-8">
-        <Skeleton className="mt-10 h-40 w-96 " />
+        <Skeleton className="mt-10 h-40 w-[80%] " />
         <div className="flex w-full flex-col space-y-2">
           <Skeleton className="h-20 w-80 " />
           <Skeleton className="nd h-6 w-20" />
