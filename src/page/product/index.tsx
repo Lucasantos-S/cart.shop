@@ -82,7 +82,7 @@ export default function Product() {
             <Skeleton className="mt-10 h-40 w-96 " />
           )}
           <div className="flex w-full flex-col space-y-2">
-            <p className="w-80 text-lg text-muted-foreground">
+            <p className="max-w-80 break-words text-lg text-muted-foreground">
               {productFn?.description}
             </p>
             <span className="text-lg font-bold -tracking-tight text-foreground">
@@ -92,7 +92,7 @@ export default function Product() {
         </main>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex h-[350px] w-full flex-1 flex-col gap-10 p-8"
+          className="flex  w-full flex-1 flex-col space-y-5 p-4 px-8 sm:p-8"
         >
           <section className="flex flex-col space-y-2">
             <Label htmlFor="observation" className="text-base">
@@ -100,7 +100,7 @@ export default function Product() {
             </Label>
             <Textarea
               {...register('observation')}
-              className="col-span-3 h-36 resize-none"
+              className="h-28 resize-none"
               id="observation"
             />
           </section>
