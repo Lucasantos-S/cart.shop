@@ -23,9 +23,9 @@ export default function Catalog() {
   return (
     <>
       <Helmet title="Catalogo" />
-      <div className="flex w-screen flex-col  space-y-4  ">
+      <div className="flex  flex-col  space-y-4  ">
         <Title title="Catalogo" />
-        <main className="flex flex-1 flex-col space-y-2 overflow-auto px-8">
+        <main className="flex w-screen flex-1 flex-col space-y-2 overflow-auto px-8">
           {isLoadingProducts ? <CatalogProductsSkeleton /> : products}
         </main>
         <CartDetails />
