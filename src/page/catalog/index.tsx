@@ -22,10 +22,10 @@ export default function Catalog() {
   }, [productsFn])
   return (
     <>
-      <Helmet title="Catalogo" />
-      <div className="flex  flex-col  space-y-4  ">
-        <Title title="Catalogo" />
-        <main className="flex w-screen flex-1 flex-col space-y-2 overflow-auto px-8">
+      <Helmet title="Catálogo" />
+      <div className="flex w-full  flex-col  space-y-4 lg:items-center lg:justify-center  ">
+        <Title title="Catálogo" />
+        <main className="flex w-screen flex-1 grid-cols-2 flex-col  space-y-2 overflow-auto px-8 lg:container lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:gap-0 lg:space-y-0 ">
           {isLoadingProducts ? <CatalogProductsSkeleton /> : products}
         </main>
         <CartDetails />

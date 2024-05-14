@@ -5,8 +5,8 @@ import NavLink from './nav-link'
 
 export default function Header() {
   return (
-    <div className="border-b">
-      <div className="flex h-16 items-center gap-6 px-6 ">
+    <div className="border-b ">
+      <div className="flex h-16 items-center gap-6 px-6 lg:container ">
         <ChefHat className="h-6 w-6" />
         <Separator
           orientation="vertical"

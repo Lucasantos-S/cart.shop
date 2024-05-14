@@ -2,7 +2,7 @@ import Skeleton from '@/components/ui/skeleton'
 
 export default function ProductSkeleton() {
   return (
-    <div className="flex w-screen flex-col  space-y-4  ">
+    <div className="flex w-screen flex-col  space-y-4 lg:container ">
       <header className="flex items-center justify-center">
         <Skeleton className="h-10 w-32" />
       </header>
@@ -13,10 +13,10 @@ export default function ProductSkeleton() {
           <Skeleton className="nd h-6 w-20" />
         </div>
       </main>
-      <footer className="flex h-[350px] w-full flex-1 flex-col gap-10 p-8">
+      <footer className="flex h-[350px] w-full flex-1 flex-col gap-5 p-8">
         <section className="flex flex-col space-y-2">
           <Skeleton className="h-6 w-28 " />
-          <Skeleton className="w-fill h-36 " />
+          <Skeleton className="w-fill h-28 " />
         </section>
         <section className="flex items-center gap-10">
           <div className="flex items-center gap-1">

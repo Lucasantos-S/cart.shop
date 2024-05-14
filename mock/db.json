@@ -1,46 +1,81 @@
 {
-    "products": [
+  "products": [
+    {
+      "id": "58d6048f-53b9-4cf1-94ca-ff1e5a2e1697",
+      "name": "Big",
+      "price": 12.99,
+      "description": "Dois hambúrgueres, alface, queijo, molho especial, cebola e picles em um pão com gergelim.",
+      "img": "https://i.postimg.cc/ydF6fYZM/5882482de81acb96424ffaac.png"
+    },
+    {
+      "id": "b43aa2d9-6c7b-4ad5-a2d7-4ae0f8a94fb3",
+      "name": "Chicken",
+      "price": 9.99,
+      "description": "Filé de frango empanado, alface e maionese em um pão de hambúrguer.",
+      "img": "https://i.postimg.cc/vThYsqXX/58824846e81acb96424ffaad.png"
+    },
+    {
+      "id": "06af7399-5cc1-45b2-895a-1fd08555d1c3",
+      "name": "Fish",
+      "price": 10.99,
+      "description": "Filete de peixe empanado, queijo e molho tártaro em um pão de hambúrguer com gergelim.",
+      "img": "https://i.postimg.cc/c411mW4z/58824b29e81acb96424ffab8.png"
+    },
+    {
+      "id": "83311c2a-221a-4f4b-8553-d935a9f96c0e",
+      "name": "Nuggets (6 peças)",
+      "price": 8.99,
+      "description": "Deliciosos pedaços de frango empanado, perfeitos para compartilhar.",
+      "img": "https://i.postimg.cc/Pr6XV7C5/5906074f0cbeef0acff9a640.png"
+    },
+    {
+      "id": "b95c191f-cc7c-4893-b951-f6ba3f321d02",
+      "name": "Flurry Oreo",
+      "price": 7.99,
+      "description": "Sorvete de baunilha com pedaços de biscoito Oreo e cobertura de chocolate.",
+      "img": "https://i.postimg.cc/pL42RnYN/5cb7759aa7c7755bf004c104.png"
+    },
+    {
+      "id": "d6ef5488-fb5b-4a58-9a4f-90827735dca6",
+      "name": "Sundae",
+      "price": 6.99,
+      "description": "Sorvete de baunilha coberto com calda de chocolate e chantilly.",
+      "img": "https://i.postimg.cc/MZ7X5t0n/kisspng-sundae-dulce-de-leche-mcflurry-ice-cream-mcdonald-5afdc43b825346-5585053515265802835338.png"
+    }
+  ],
+  "send-order": [
+    {
+      "id": "",
+      "totalItems": 9,
+      "totalPrice": 98.91,
+      "cartItems": [
         {
+          "observation": "",
+          "id": "793b0844-0ceb-4dd5-993a-77b7bf7bba36",
+          "quantity": 3,
+          "total": 38.97,
+          "product": {
             "id": "58d6048f-53b9-4cf1-94ca-ff1e5a2e1697",
-            "name": "Big Mac",
+            "name": "Big",
             "price": 12.99,
             "description": "Dois hambúrgueres, alface, queijo, molho especial, cebola e picles em um pão com gergelim.",
             "img": "https://i.postimg.cc/ydF6fYZM/5882482de81acb96424ffaac.png"
+          }
         },
         {
+          "observation": "",
+          "id": "115e77de-4205-49d6-a6a4-bb48a7585b90",
+          "quantity": 6,
+          "total": 59.94,
+          "product": {
             "id": "b43aa2d9-6c7b-4ad5-a2d7-4ae0f8a94fb3",
-            "name": "McChicken",
+            "name": "Chicken",
             "price": 9.99,
             "description": "Filé de frango empanado, alface e maionese em um pão de hambúrguer.",
             "img": "https://i.postimg.cc/vThYsqXX/58824846e81acb96424ffaad.png"
-        },
-        {
-            "id": "06af7399-5cc1-45b2-895a-1fd08555d1c3",
-            "name": "McFish",
-            "price": 10.99,
-            "description": "Filete de peixe empanado, queijo e molho tártaro em um pão de hambúrguer com gergelim.",
-            "img": "https://i.postimg.cc/c411mW4z/58824b29e81acb96424ffab8.png"
-        },
-        {
-            "id": "83311c2a-221a-4f4b-8553-d935a9f96c0e",
-            "name": "McNuggets (6 peças)",
-            "price": 8.99,
-            "description": "Deliciosos pedaços de frango empanado, perfeitos para compartilhar.",
-            "img": "https://i.postimg.cc/Pr6XV7C5/5906074f0cbeef0acff9a640.png"
-        },
-        {
-            "id": "b95c191f-cc7c-4893-b951-f6ba3f321d02",
-            "name": "McFlurry Oreo",
-            "price": 7.99,
-            "description": "Sorvete de baunilha com pedaços de biscoito Oreo e cobertura de chocolate.",
-            "img": "https://i.postimg.cc/pL42RnYN/5cb7759aa7c7755bf004c104.png"
-        },
-        {
-            "id": "d6ef5488-fb5b-4a58-9a4f-90827735dca6",
-            "name": "Sundae de Morango",
-            "price": 6.99,
-            "description": "Sorvete de baunilha coberto com calda de morango e chantilly.",
-            "img": "https://i.postimg.cc/MZ7X5t0n/kisspng-sundae-dulce-de-leche-mcflurry-ice-cream-mcdonald-5afdc43b825346-5585053515265802835338.png"
+          }
         }
-    ]
+      ]
+    }
+  ]
 }
