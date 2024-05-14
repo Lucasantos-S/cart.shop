@@ -5,7 +5,7 @@ import enptyList from './empty-list.json'
 export default function EmptyCartAnimation() {
   const options = {
     animationData: enptyList,
-    loop: true,
+    loop: false,
     autoplay: true,
   }
 

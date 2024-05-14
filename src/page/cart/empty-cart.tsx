@@ -13,7 +13,7 @@ export default function EmptyCart() {
         </h1>
         <EmptyCartAnimation />
         <div className="flex flex-col space-y-6">
-          <Button onClick={() => navigate('/')}>Retornar ao catalogo</Button>
+          <Button onClick={() => navigate('/')}>RETORNAR AO CATALOGO</Button>
         </div>
       </div>
     </div>
