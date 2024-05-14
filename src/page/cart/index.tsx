@@ -39,7 +39,7 @@ export default function Cart() {
   return (
     <>
       <Helmet title="Carrinho" />
-      <div className="flex w-screen flex-col  space-y-4 px-8 pb-4">
+      <div className="flex w-screen flex-col  space-y-4 px-8 pb-4 lg:container">
         <section className="flex flex-1 flex-col space-y-2 overflow-auto ">
           {allItemsInCart}
         </section>
