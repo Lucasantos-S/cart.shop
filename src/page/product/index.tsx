@@ -51,8 +51,8 @@ export default function Product() {
   })
 
   const onSubmit = (data: ProductSchema) => {
-    toast.success('Pedido adicionar no carrinho')
     if (productFn) {
+      toast.success('Item adicionado no carrinho')
       addToItemCart({
         ...data,
         id: uuidv4(),
@@ -135,7 +135,7 @@ export default function Product() {
                 <span className="sr-only">Aumentar 1 item do pedido</span>
               </Button>
             </div>
-            <Button className="flex-1">Adicionar</Button>
+            <Button className="flex-1">ADICIONAR</Button>
           </section>
         </form>
       </div>

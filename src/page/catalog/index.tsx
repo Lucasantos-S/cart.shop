@@ -22,9 +22,9 @@ export default function Catalog() {
   }, [productsFn])
   return (
     <>
-      <Helmet title="Catalogo" />
+      <Helmet title="Catálogo" />
       <div className="flex  flex-col  space-y-4  ">
-        <Title title="Catalogo" />
+        <Title title="Catálogo" />
         <main className="flex w-screen flex-1 flex-col space-y-2 overflow-auto px-8">
           {isLoadingProducts ? <CatalogProductsSkeleton /> : products}
         </main>

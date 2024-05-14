@@ -1,4 +1,5 @@
 import { Minus, Plus, Trash2 } from 'lucide-react'
+import { toast } from 'sonner'
 
 import { Button } from '@/components/ui/button'
 import { useCart } from '@/context/cart-provider'
@@ -20,6 +21,7 @@ export default function OrderAddOrRemove({
       <Button
         onClick={() => {
           removedCartItem(cartItemId)
+          toast.success('Pedido removido')
         }}
         variant={'outline'}
       >

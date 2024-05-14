@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 
-import { Button } from '@/components/ui/button'
 import { useCart } from '@/context/cart-provider'
 import { formatPrice } from '@/lib/utils'
 
@@ -9,20 +8,17 @@ export default function CartDetails() {
   return (
     <Link
       to={'/cart'}
-      className="flex h-16 w-full  justify-center bg-primary transition-all hover:bg-primary/90"
+      className="grid h-16 w-full grid-cols-3 items-center  justify-between bg-primary px-8 transition-all hover:bg-primary/90"
     >
-      <Button
-        variant={'ghost'}
-        className="flex h-full w-full items-center justify-between px-10 hover:bg-green-600/30"
-      >
-        <span className="text-lg text-foreground">
-          {cart.totalItems ?? '0'} Produto(s)
-        </span>
-        <span className="text-lg text-foreground">Carrinho</span>
-        <span className="text-lg text-foreground">
+      <span className="text-foreground sm:text-lg">
+        {cart.totalItems ?? '0'} PRODUTO(S)
+      </span>
+      <span className="text-center text-foreground sm:text-lg ">CARRINHO</span>
+      <div className="flex justify-end">
+        <span className="text-foreground sm:text-lg">
           {formatPrice(cart.totalPrice ?? 0)}{' '}
         </span>
-      </Button>
+      </div>
     </Link>
   )
 }

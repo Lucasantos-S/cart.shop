@@ -62,7 +62,7 @@ export default function Cart() {
             {isLoadingSubmit ? (
               <Loader className="mr-2 h-4 w-4 animate-spin" />
             ) : (
-              'Fazer pedido'
+              'FAZER PEDIDO'
             )}
           </Button>
         </section>
