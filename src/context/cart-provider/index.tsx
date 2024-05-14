@@ -1,4 +1,4 @@
-import React, { useCallback, useReducer } from 'react'
+import React, { useCallback, useReducer, useState } from 'react'
 
 import { cartReducer, initialState } from '@/reducers/cart-reducer'
 import {
@@ -15,6 +15,7 @@ const CardContext = React.createContext({} as ICardContext)
 
 function CartProvider({ children }: ContextProps) {
   const [cartState, dispatch] = useReducer(cartReducer, initialState)
+  const [cartSend, setCartSend] = useState(false)
 
   const removeItemQuantityFromCart = useCallback(
     (cartItemId: string, newQuantity: number) => {
@@ -61,11 +62,13 @@ function CartProvider({ children }: ContextProps) {
     <CardContext.Provider
       value={{
         cart: cartState,
+        cartSend,
         addToItemCart,
         addQuantityFromCart,
         removeItemQuantityFromCart,
         removedCart,
         removedCartItem,
+        setCartSend,
       }}
     >
       {children}

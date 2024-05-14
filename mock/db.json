@@ -43,39 +43,5 @@
       "img": "https://i.postimg.cc/MZ7X5t0n/kisspng-sundae-dulce-de-leche-mcflurry-ice-cream-mcdonald-5afdc43b825346-5585053515265802835338.png"
     }
   ],
-  "send-order": [
-    {
-      "id": "",
-      "totalItems": 9,
-      "totalPrice": 98.91,
-      "cartItems": [
-        {
-          "observation": "",
-          "id": "793b0844-0ceb-4dd5-993a-77b7bf7bba36",
-          "quantity": 3,
-          "total": 38.97,
-          "product": {
-            "id": "58d6048f-53b9-4cf1-94ca-ff1e5a2e1697",
-            "name": "Big",
-            "price": 12.99,
-            "description": "Dois hambúrgueres, alface, queijo, molho especial, cebola e picles em um pão com gergelim.",
-            "img": "https://i.postimg.cc/ydF6fYZM/5882482de81acb96424ffaac.png"
-          }
-        },
-        {
-          "observation": "",
-          "id": "115e77de-4205-49d6-a6a4-bb48a7585b90",
-          "quantity": 6,
-          "total": 59.94,
-          "product": {
-            "id": "b43aa2d9-6c7b-4ad5-a2d7-4ae0f8a94fb3",
-            "name": "Chicken",
-            "price": 9.99,
-            "description": "Filé de frango empanado, alface e maionese em um pão de hambúrguer.",
-            "img": "https://i.postimg.cc/vThYsqXX/58824846e81acb96424ffaad.png"
-          }
-        }
-      ]
-    }
-  ]
+  "send-order": []
 }

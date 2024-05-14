@@ -8,16 +8,16 @@ import SuccessAnimate from '@/Lottie/success'
 export default function SendWithSuccess() {
   const navigate = useNavigate()
 
-  const { cart } = useCart()
+  const { setCartSend } = useCart()
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      console.log(cart)
-      navigate('/')
+      setCartSend(false)
+      navigate('/', { replace: true })
     }, 3000)
 
     return () => clearTimeout(timeout)
-  }, [navigate, cart])
+  }, [navigate, setCartSend])
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center">
       <Helmet title="Sucesso" />/

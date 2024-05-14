@@ -34,7 +34,7 @@ export default function OrderProductCard({
             {orderProductData.product?.name}
           </h2>
           <p className="text-muted-foreground">
-            {formatPrice(orderProductData?.total as number)}
+            {formatPrice(orderProductData?.product.price as number)}
           </p>
         </div>
       </section>
