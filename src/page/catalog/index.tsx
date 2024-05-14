@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 import { getProducts } from '@/api/get-products'
+import RequestError from '@/components/request-error'
 import Title from '@/components/title'
 
 import CartDetails from './cart-details'
@@ -10,7 +11,11 @@ import CatalogProductCard from './catalog-product-card'
 import CatalogProductsSkeleton from './catalog-products-skeleton'
 
 export default function Catalog() {
-  const { data: productsFn, isLoading: isLoadingProducts } = useQuery({
+  const {
+    data: productsFn,
+    isLoading: isLoadingProducts,
+    isError,
+  } = useQuery({
     queryKey: ['products'],
     queryFn: getProducts,
   })
@@ -20,6 +25,8 @@ export default function Catalog() {
       return <CatalogProductCard key={product.id} productsData={product} />
     })
   }, [productsFn])
+
+  if (isError) return <RequestError />
   return (
     <>
       <Helmet title="Catálogo" />

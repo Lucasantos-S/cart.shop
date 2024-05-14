@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { z } from 'zod'
 
 import { getProductById } from '@/api/get-product-by-id'
+import RequestError from '@/components/request-error'
 import Title from '@/components/title'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
@@ -65,7 +66,7 @@ export default function Product() {
   }
 
   if (isLoadingProduct) return <ProductSkeleton />
-  if (isErrorProduct) return <div>Error</div>
+  if (isErrorProduct) return <RequestError />
   return (
     <>
       <Helmet title={productFn?.name} />
