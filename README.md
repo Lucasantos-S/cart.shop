@@ -13,9 +13,7 @@ Após clonar o repositório, navegue até o diretório raiz do projeto e execute
 ```bash
 npm install
 
-```bash
 npm run server
 
-```bash
 npm run dev
 
