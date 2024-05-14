@@ -1,7 +1,11 @@
+import { useMutation } from '@tanstack/react-query'
+import { Loader } from 'lucide-react'
 import { useMemo } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'sonner'
 
+import { submitOrdersFromCart } from '@/api/submit-orders-from-cart'
 import { Button } from '@/components/ui/button'
 import { useCart } from '@/context/cart-provider'
 import { formatPrice } from '@/lib/utils'
@@ -11,7 +15,19 @@ import OrderProductCard from './order-product-card'
 
 export default function Cart() {
   const navigate = useNavigate()
-  const { cart } = useCart()
+  const { cart, removedCart, setCartSend } = useCart()
+
+  const { mutateAsync: submitOrder, isPending: isLoadingSubmit } = useMutation({
+    mutationFn: submitOrdersFromCart,
+    onSuccess: () => {
+      removedCart()
+      setCartSend(true)
+      navigate('/success')
+    },
+    onError: () => {
+      toast.error('Erro no envio do pedido, verifique e tente novamente...')
+    },
+  })
 
   const allItemsInCart = useMemo(() => {
     if (cart.cartItems)
@@ -24,7 +40,7 @@ export default function Cart() {
   return (
     <>
       <Helmet title="Carrinho" />
-      <div className="flex w-screen flex-col  space-y-4 px-8 pb-4">
+      <div className="flex w-screen flex-col  space-y-4 px-8 pb-4 lg:container">
         <section className="flex flex-1 flex-col space-y-2 overflow-auto ">
           {allItemsInCart}
         </section>
@@ -38,12 +54,17 @@ export default function Cart() {
             </p>
           </div>
           <Button
+            disabled={isLoadingSubmit}
             type="button"
             onClick={() => {
-              navigate('/success')
+              submitOrder(cart)
             }}
           >
-            Fazer pedido
+            {isLoadingSubmit ? (
+              <Loader className="mr-2 h-4 w-4 animate-spin" />
+            ) : (
+              'FAZER PEDIDO'
+            )}
           </Button>
         </section>
       </div>

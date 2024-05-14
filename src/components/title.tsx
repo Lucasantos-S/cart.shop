@@ -1,5 +1,3 @@
-import React from 'react'
-
 export interface TitleProps {
   title: string
 }
@@ -13,7 +11,7 @@ export default function Title({ title }: TitleProps) {
             {title}
           </h1>
         </div>
-        <span className=" absolute -left-[4px] bottom-[2px] -z-50 h-5 w-5 rounded-sm bg-primary" />
+        <span className=" absolute -left-[4px] bottom-[4px] -z-50 h-5 w-5 rounded-sm bg-primary" />
       </div>
     </header>
   )

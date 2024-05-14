@@ -6,7 +6,7 @@ export default function LeyoutDefault() {
   return (
     <div className="flex min-h-screen flex-col antialiased">
       <Header />
-      <div className="flex max-h-[calc(100vh-65px)] flex-1 pt-6">
+      <div className="flex max-h-[calc(100vh-65px)] flex-1 pt-6 lg:justify-center">
         <Outlet />
       </div>
     </div>

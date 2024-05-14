@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { z } from 'zod'
 
 import { getProductById } from '@/api/get-product-by-id'
+import RequestError from '@/components/request-error'
 import Title from '@/components/title'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
@@ -51,8 +52,8 @@ export default function Product() {
   })
 
   const onSubmit = (data: ProductSchema) => {
-    toast.success('Pedido adicionar no carrinho')
     if (productFn) {
+      toast.success('Item adicionado no carrinho')
       addToItemCart({
         ...data,
         id: uuidv4(),
@@ -65,11 +66,11 @@ export default function Product() {
   }
 
   if (isLoadingProduct) return <ProductSkeleton />
-  if (isErrorProduct) return <div>Error</div>
+  if (isErrorProduct) return <RequestError />
   return (
     <>
       <Helmet title={productFn?.name} />
-      <div className="flex w-screen flex-col  space-y-4  ">
+      <div className="flex w-screen flex-col  space-y-4 lg:container  ">
         <Title title={productFn?.name as string} />
         <main className=" flex animate-left flex-col items-center space-y-2 overflow-auto px-8">
           {productFn?.img ? (
@@ -82,7 +83,7 @@ export default function Product() {
             <Skeleton className="mt-10 h-40 w-96 " />
           )}
           <div className="flex w-full flex-col space-y-2">
-            <p className="w-80 text-lg text-muted-foreground">
+            <p className="max-w-80 break-words text-lg text-muted-foreground">
               {productFn?.description}
             </p>
             <span className="text-lg font-bold -tracking-tight text-foreground">
@@ -92,7 +93,7 @@ export default function Product() {
         </main>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex h-[350px] w-full flex-1 flex-col gap-10 p-8"
+          className="flex  w-full flex-1 flex-col space-y-5 p-4 px-8 sm:p-8"
         >
           <section className="flex flex-col space-y-2">
             <Label htmlFor="observation" className="text-base">
@@ -100,7 +101,7 @@ export default function Product() {
             </Label>
             <Textarea
               {...register('observation')}
-              className="col-span-3 h-36 resize-none"
+              className="h-28 resize-none"
               id="observation"
             />
           </section>
@@ -135,7 +136,7 @@ export default function Product() {
                 <span className="sr-only">Aumentar 1 item do pedido</span>
               </Button>
             </div>
-            <Button className="flex-1">Adicionar</Button>
+            <Button className="flex-1">ADICIONAR</Button>
           </section>
         </form>
       </div>

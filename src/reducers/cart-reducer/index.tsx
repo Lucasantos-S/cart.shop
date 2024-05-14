@@ -19,7 +19,7 @@ export const initialState: CartState = {
   cartItems: [],
 }
 
-function calculateTotalItemsAndPrice(newCart: cartItem[]) {
+export function calculateTotalItemsAndPrice(newCart: cartItem[]) {
   const { totalItems, totalPrice } = newCart.reduce(
     (acc, item) => {
       acc.totalPrice += item.quantity * item.product.price

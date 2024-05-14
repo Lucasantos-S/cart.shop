@@ -26,9 +26,11 @@ export interface UpdateQuantityFromCart {
 
 export interface ICardContext {
   cart: CartState
+  cartSend: boolean
   addToItemCart: (cardItem: cartItem) => void
   addQuantityFromCart: (cartItemId: string, newQuantity: number) => void
   removeItemQuantityFromCart: (cartItemId: string, newQuantity: number) => void
   removedCart: () => void
   removedCartItem: (cartItemId: string) => void
+  setCartSend: React.Dispatch<React.SetStateAction<boolean>>
 }

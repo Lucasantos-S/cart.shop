@@ -1,30 +1,21 @@
-# React + TypeScript + Vite
+# Carrinho de Compras
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto de carrinho de compras desenvolvido em React, TypeScript, Vite, hook-forms, Tailwind CSS e Vitest. Ele permite que os usuários incluam itens no carrinho, adicionem ou removam quantidades e enviem o pedido como se estivessem enviando para um restaurante.
 
-Currently, two official plugins are available:
+## Como Executar o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Pré-requisitos
 
-## Expanding the ESLint configuration
+Certifique-se de ter o Node.js e o npm instalados em sua máquina.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Instalação
 
-- Configure the top-level `parserOptions` property like this:
+Após clonar o repositório, navegue até o diretório raiz do projeto e execute o seguinte comando para instalar as dependências:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+```bash
+npm install
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+npm run server
+
+npm run dev
+

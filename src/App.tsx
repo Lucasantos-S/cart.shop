@@ -13,7 +13,13 @@ function App() {
     <div className="min-h-screen">
       <HelmetProvider>
         <Helmet titleTemplate="%s | cart.shop" />
-        <Toaster richColors />
+        <Toaster
+          richColors
+          position="top-right"
+          toastOptions={{
+            duration: 1000,
+          }}
+        />
         <QueryClientProvider client={queryClient}>
           <CartProvider>
             <Routers />

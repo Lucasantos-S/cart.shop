@@ -1,16 +1,16 @@
 import { useLottie } from 'lottie-react'
 
-import enptyList from './empty-list.json'
+import error from './error.json'
 
-export default function EmptyCartAnimation() {
+export default function Error() {
   const options = {
-    animationData: enptyList,
+    animationData: error,
     loop: false,
     autoplay: true,
   }
 
   const { View } = useLottie(options, {
-    height: 400,
+    height: '30%',
   })
 
   return View
