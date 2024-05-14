@@ -2,7 +2,9 @@
 
 Este é um projeto de carrinho de compras desenvolvido em React, TypeScript, Vite, hook-forms, Tailwind CSS e Vitest. Ele permite que os usuários incluam itens no carrinho, adicionem ou removam quantidades e enviem o pedido como se estivessem enviando para um restaurante.
 
-## Pré-requisitos
+## Como Executar o Projeto
+
+### Pré-requisitos
 
 Certifique-se de ter o Node.js e o npm instalados em sua máquina.
 
