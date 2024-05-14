@@ -43,5 +43,59 @@
       "img": "https://i.postimg.cc/MZ7X5t0n/kisspng-sundae-dulce-de-leche-mcflurry-ice-cream-mcdonald-5afdc43b825346-5585053515265802835338.png"
     }
   ],
-  "send-order": []
+  "send-order": [
+    {
+      "id": "",
+      "totalItems": 3,
+      "totalPrice": 32.97,
+      "cartItems": [
+        {
+          "observation": "",
+          "id": "369cbbff-a5a3-47ac-ba9e-db61fc7e495e",
+          "quantity": 1,
+          "total": 12.99,
+          "product": {
+            "id": "58d6048f-53b9-4cf1-94ca-ff1e5a2e1697",
+            "name": "Big",
+            "price": 12.99,
+            "description": "Dois hambúrgueres, alface, queijo, molho especial, cebola e picles em um pão com gergelim.",
+            "img": "https://i.postimg.cc/ydF6fYZM/5882482de81acb96424ffaac.png"
+          }
+        },
+        {
+          "observation": "",
+          "id": "9f87fafd-abe1-4eda-9e51-5c53496b4fe6",
+          "quantity": 2,
+          "total": 19.98,
+          "product": {
+            "id": "b43aa2d9-6c7b-4ad5-a2d7-4ae0f8a94fb3",
+            "name": "Chicken",
+            "price": 9.99,
+            "description": "Filé de frango empanado, alface e maionese em um pão de hambúrguer.",
+            "img": "https://i.postimg.cc/vThYsqXX/58824846e81acb96424ffaad.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "",
+      "totalItems": 1,
+      "totalPrice": 8.99,
+      "cartItems": [
+        {
+          "observation": "",
+          "id": "6eabf507-d35f-4fbd-bac9-1cb435502e89",
+          "quantity": 1,
+          "total": 8.99,
+          "product": {
+            "id": "83311c2a-221a-4f4b-8553-d935a9f96c0e",
+            "name": "Nuggets (6 peças)",
+            "price": 8.99,
+            "description": "Deliciosos pedaços de frango empanado, perfeitos para compartilhar.",
+            "img": "https://i.postimg.cc/Pr6XV7C5/5906074f0cbeef0acff9a640.png"
+          }
+        }
+      ]
+    }
+  ]
 }

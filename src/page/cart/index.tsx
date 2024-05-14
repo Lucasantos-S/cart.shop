@@ -15,12 +15,13 @@ import OrderProductCard from './order-product-card'
 
 export default function Cart() {
   const navigate = useNavigate()
-  const { cart, removedCart } = useCart()
+  const { cart, removedCart, setCartSend } = useCart()
 
   const { mutateAsync: submitOrder, isPending: isLoadingSubmit } = useMutation({
     mutationFn: submitOrdersFromCart,
     onSuccess: () => {
       removedCart()
+      setCartSend(true)
       navigate('/success')
     },
     onError: () => {
